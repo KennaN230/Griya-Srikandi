@@ -5,63 +5,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".EditProfil">
 
-    <ImageView
-        android:id="@+id/imageViewProfile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/w"
-        android:layout_marginBottom="16dp"/>
+    <!-- Nama Pengguna -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUsername"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/textViewChangeImage"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Pengguna"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Email -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilUsername"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nomor Telepon -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPhoneNumber"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilEmail"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Nomor Telepon"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Tombol Simpan -->
+    <Button
+        android:id="@+id/buttonSaveProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ganti Gambar Profil"
-        android:layout_below="@id/imageViewProfile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorPrimary"/>
+        android:layout_below="@id/tilPhoneNumber"
+        android:backgroundTint="@color/Button1"
+        android:text="Simpan"/>
 
-    <EditText
-        android:id="@+id/editTextName"
+    <ImageView
+        android:id="@+id/secondImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewChangeImage"
-        android:layout_marginTop="16dp"
-        android:hint="Nama"
-        android:inputType="textPersonName"/>
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName"
-        android:layout_marginTop="8dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:enabled="false"/>
-
-    <EditText
-        android:id="@+id/editTextPhoneNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextEmail"
-        android:layout_marginTop="8dp"
-        android:hint="Nomor Telepon"
-        android:inputType="phone"/>
-
-    <Button
-        android:id="@+id/buttonSaveChanges"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPhoneNumber"
-        android:layout_marginTop="16dp"
-        android:text="Simpan Perubahan"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"/>
-
+        android:layout_below="@+id/buttonSaveProfile"
+        android:src="@drawable/login"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

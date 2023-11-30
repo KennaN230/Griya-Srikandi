@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.psrikandi.Cart.CartItem;
@@ -50,13 +51,17 @@ public class AddToCart extends AppCompatActivity {
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    EditText quantityEditText = findViewById(R.id.quantityEditText);
+                    int userInputQuantity = Integer.parseInt(quantityEditText.getText().toString());
+
                     saveDataToSharedPreferences(namaProduk, hargaProduk, quantity, totalHarga);
                 }
             });
         }
     }
 
-    private void saveDataToSharedPreferences(String namaProduk, double hargaProduk, int quantity, double totalHarga) {
+    private void saveDataToSharedPreferences(String namaProduk, double hargaProduk, int userInputQuantity, double totalHarga) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
@@ -72,7 +77,7 @@ public class AddToCart extends AppCompatActivity {
         }
 
         // Tambahkan produk baru ke dalam keranjang belanja
-        cartItems.add(new CartItem(namaProduk, String.valueOf(hargaProduk), quantity, totalHarga));
+        cartItems.add(new CartItem(namaProduk, Double.valueOf(hargaProduk), userInputQuantity, totalHarga));
 
         // Simpan kembali data keranjang belanja ke SharedPreferences
         String newCartJson = gson.toJson(cartItems);

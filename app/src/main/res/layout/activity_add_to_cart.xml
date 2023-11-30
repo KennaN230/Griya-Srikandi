@@ -39,4 +39,12 @@
         android:layout_height="wrap_content"
         android:text="Add to Cart"/>
 
+    <ImageView
+        android:id="@+id/secondImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addToCartButton"
+        android:src="@drawable/login"
+        android:layout_alignParentBottom="true"/>
+
 </LinearLayout>

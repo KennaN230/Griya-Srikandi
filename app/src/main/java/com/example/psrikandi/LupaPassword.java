@@ -60,7 +60,7 @@ public class LupaPassword extends AppCompatActivity {
             String newPassword = params[1];
 
             try {
-                URL url = new URL("http://10.10.4.139//Griya/lupapassword.php"); // Ganti dengan URL yang sesuai
+                URL url = new URL("http://192.168.211.105//Griya/lupapassword.php"); // Ganti dengan URL yang sesuai
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);

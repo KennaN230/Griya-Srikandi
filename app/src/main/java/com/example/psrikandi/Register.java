@@ -31,7 +31,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     private static final String TAG = Register.class.getSimpleName();
-    private static final String REGISTER_URL = "http://10.10.4.139//Griya/register.php"; // Ganti dengan URL server Anda
+    private static final String REGISTER_URL = "http://192.168.211.105//Griya/register.php"; // Ganti dengan URL server Anda
 
     private EditText editTextName, editTextPassword, editTextAddress, editTextPhoneNumber, editTextEmail;
 

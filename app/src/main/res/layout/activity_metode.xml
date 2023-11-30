@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Metode">
+
+    <TextView
+        android:id="@+id/paymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pembayaran"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/paymentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi Pembayaran"
+        android:layout_below="@id/paymentTitle"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/paymentAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Jumlah Pembayaran"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/paymentDescription"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Elemen UI lain yang diperlukan, seperti deskripsi pembayaran, jumlah, dll. -->
+
+    <Button
+        android:id="@+id/payButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bayar Sekarang"
+        android:layout_below="@id/paymentAmount"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

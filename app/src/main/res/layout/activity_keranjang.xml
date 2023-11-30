@@ -1,0 +1,48 @@
+<!-- activity_keranjang.xml -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Keranjang">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- TextView untuk menampilkan data keranjang -->
+            <TextView
+                android:id="@+id/cartDataTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <!-- TextView untuk menampilkan total harga -->
+            <TextView
+                android:id="@+id/totalTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cartDataTextView"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Total: Rp. 0.00"
+                android:textSize="18sp" />
+
+            <!-- Button untuk membersihkan keranjang -->
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalTextView"
+                android:text="Clear Cart" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<!-- res/menu/bottom_navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_product"
+        android:icon="@drawable/produk"
+        android:title="Produk" />
+    <item
+        android:id="@+id/navigation_flash_sale"
+        android:icon="@drawable/flash"
+        android:title="Flash Sale" />
+    <item
+        android:id="@+id/navigation_order"
+        android:icon="@drawable/order"
+        android:title="Pesanan" />
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/user"
+        android:title="Pengguna" />
+</menu>

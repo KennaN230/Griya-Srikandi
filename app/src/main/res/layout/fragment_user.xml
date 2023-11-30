@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3EFEF">
+
+    <!-- Biodata CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/biodataCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Gambar Profil -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/w"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Nama Pengguna -->
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pengguna"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Email Pengguna -->
+            <TextView
+                android:id="@+id/emailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pengguna@example.com"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Menu Baris Bawah -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/biodataCardView"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Pesanan Saya -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Ps"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/bag"
+                app:tint="#8A4310" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Pesanan Saya"
+                android:textColor="#8A4310" />
+        </LinearLayout>
+
+        <!-- Pengaturan Akun -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/Pa"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/setting"
+                app:tint="#8A4310" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan Akun"
+                android:layout_marginTop="4dp"
+                android:textColor="#8A4310" />
+        </LinearLayout>
+
+        <!-- Chat dengan Admin -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/Wa"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/chat"
+                app:tint="#8A4310" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat dengan Admin"
+                android:layout_marginTop="4dp"
+                android:textColor="#8A4310" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/secondImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg3"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

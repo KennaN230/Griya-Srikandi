@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp"
     android:background="?android:attr/selectableItemBackground">
 
@@ -14,22 +14,29 @@
         android:scaleType="centerCrop"
         android:src="@drawable/test" />
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nama: " />
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
 
-    <TextView
-        android:id="@+id/textPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Harga: " />
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama: " />
 
-    <Button
-        android:id="@+id/beliButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beli" />
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga: " />
 
+        <Button
+            android:id="@+id/beliButton"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/Button1"
+            android:layout_height="wrap_content"
+            android:text="Beli" />
+    </LinearLayout>
 </LinearLayout>

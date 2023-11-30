@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".EditAllamat">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Nama Penerima -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRecipientName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRecipientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Penerima"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nomor Telepon Penerima -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRecipientPhone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilRecipientName"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRecipientPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Nomor Telepon Penerima"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Alamat Lengkap -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFullAddress"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilRecipientPhone"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextFullAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alamat Lengkap"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ... Sisanya ikuti pola yang sama untuk elemen-elemen lainnya ... -->
+
+    <!-- Tombol Simpan -->
+    <Button
+        android:id="@+id/buttonSaveAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilFullAddress"
+        android:text="Simpan"
+        android:backgroundTint="@color/Button1"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/secondImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSaveAddress"
+        android:src="@drawable/login"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

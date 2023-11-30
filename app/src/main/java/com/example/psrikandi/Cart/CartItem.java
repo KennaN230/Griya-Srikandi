@@ -2,24 +2,30 @@ package com.example.psrikandi.Cart;
 
 public class CartItem {
     private String productName;
+    private Double price;
     private int quantity;
-    private double price;
+    private double totalPrice;
 
-    public CartItem(String productId, String productName, int quantity, double price) {
+    public CartItem(String productName, Double price, int quantity, double totalPrice) {
         this.productName = productName;
-        this.quantity = quantity;
         this.price = price;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
     }
 
     public String getProductName() {
         return productName;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
     public int getQuantity() {
         return quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 }

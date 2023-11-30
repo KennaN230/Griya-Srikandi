@@ -98,7 +98,6 @@ public class Keranjang extends AppCompatActivity {
             cartData.append("Nama Produk: ").append(item.getProductName()).append("\n")
                     .append("Harga Produk: ").append(item.getPrice()).append("\n")
                     .append("Quantity: ").append(item.getQuantity()).append("\n");
-//                    .append("Total Harga: ").append(item.getTotalPrice()).append("\n\n");
         }
 
         cartDataTextView.setText(cartData.toString());

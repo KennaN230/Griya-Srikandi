@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Aksi yang dilakukan saat teks "Lupa Password?" diklik
                 // TODO: Tambahkan logika untuk pengaturan lupa password
-                Intent intent = new Intent(MainActivity.this, VerifEmail.class);
+                Intent intent = new Intent(MainActivity.this, LupaPassword.class);
                 startActivity(intent);
             }
         });

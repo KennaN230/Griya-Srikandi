@@ -3,6 +3,8 @@ package com.example.psrikandi.produkAdapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.psrikandi.R;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -59,10 +62,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         // Tampilkan gambar Base64 di ImageView menggunakan Picasso
         String base64Image = productList.get(position).getImageBase64();
-        byte[] imageByteArray = Base64.decode(base64Image, Base64.NO_WRAP);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
 
-        holder.imageView.setImageBitmap(bitmap);
+//        if (base64Image != null) {
+//            byte[] imageByteArray = Base64.decode(base64Image, Base64.NO_WRAP);
+//            Bitmap bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
+//
+//            Picasso.get()
+//                    .load(getImageUri(context, bitmap))
+//                    .placeholder(R.drawable.test)
+//                    .into(holder.imageView);
+//        } else {
+//            // Handle the case when base64Image is null
+//        }
     }
 
     @Override
@@ -91,5 +102,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public interface OnItemClickListener {
         void onItemClick(ProductModel product);
+    }
+
+    private Uri getImageUri(Context context, Bitmap bitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "Title", null);
+        return Uri.parse(path);
     }
 }

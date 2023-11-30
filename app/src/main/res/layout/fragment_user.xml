@@ -24,7 +24,7 @@
                 android:id="@+id/profileImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/w"
+                android:src="@drawable/adit"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp" />
@@ -34,7 +34,7 @@
                 android:id="@+id/usernameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pengguna"
+                android:text="Aditya Bagus Wirawa"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
@@ -45,7 +45,7 @@
                 android:id="@+id/emailTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="pengguna@example.com"
+                android:text="Adityabw230@gmail.com"
                 android:textSize="16sp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp" />
@@ -133,8 +133,9 @@
     <!-- Background Image -->
     <ImageView
         android:id="@+id/secondImage"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:src="@drawable/login"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

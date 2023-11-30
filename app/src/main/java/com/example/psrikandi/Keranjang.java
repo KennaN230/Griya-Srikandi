@@ -49,7 +49,7 @@ public class Keranjang extends AppCompatActivity {
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clearCartSharedPreferences();
+                showClearCartConfirmation();
                 updateTotal();
                 updateCartDataTextView();
             }
@@ -74,11 +74,12 @@ public class Keranjang extends AppCompatActivity {
     private void showClearCartConfirmation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Konfirmasi");
-        builder.setMessage("Lampirkan Bukti Pembayaran?");
+        builder.setMessage("BCA 0241326755");
         builder.setPositiveButton("Lampirkan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 clearCartSharedPreferences();
+                openWhatsApp();
             }
         });
         builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -125,7 +126,7 @@ public class Keranjang extends AppCompatActivity {
         try {
             // Format nomor telepon sesuai dengan format URL WhatsApp
             String phoneNumber = "6282230551298"; // Ganti dengan nomor telepon yang sesuai
-            String message = "Halo, selamat siang";
+            String message = "Halo, selamat siang. Saya ingin melampirkan bukti pembayaran";
             String encodedMessage = Uri.encode(message);
             // Buat URI untuk membuka WhatsApp
             Uri uri = Uri.parse("https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodedMessage);

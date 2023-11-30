@@ -59,11 +59,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         // Tampilkan gambar Base64 di ImageView menggunakan Picasso
         String base64Image = productList.get(position).getImageBase64();
-        Glide.with(context)
-                .load(base64Image)
-                .placeholder(R.drawable.test) // Drawable placeholder yang ditampilkan sementara gambar belum dimuat
-                .error(R.drawable.w) // Drawable yang ditampilkan jika terjadi error saat memuat gambar
-                .into(holder.ImageView);
+        byte[] imageByteArray = Base64.decode(base64Image, Base64.NO_WRAP);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
+
+        holder.imageView.setImageBitmap(bitmap);
     }
 
     @Override
@@ -72,13 +71,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {
-        ImageView ImageView;
+        ImageView imageView;
         TextView textName, textPrice;
         Button beliButton;
 
         ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            ImageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.imageView);
             textName = itemView.findViewById(R.id.textName);
             textPrice = itemView.findViewById(R.id.textPrice);
             beliButton = itemView.findViewById(R.id.beliButton);
